@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsDecoding", "GraphicsDecoding\GraphicsDecoding.csproj", "{8EE4DDCC-69C9-42AF-B220-FC2E77904CEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchulteGrid", "SchulteGrid\SchulteGrid.csproj", "{15737120-636D-43F7-93B5-CDAC66E81853}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EE4DDCC-69C9-42AF-B220-FC2E77904CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE4DDCC-69C9-42AF-B220-FC2E77904CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE4DDCC-69C9-42AF-B220-FC2E77904CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE4DDCC-69C9-42AF-B220-FC2E77904CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15737120-636D-43F7-93B5-CDAC66E81853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15737120-636D-43F7-93B5-CDAC66E81853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15737120-636D-43F7-93B5-CDAC66E81853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15737120-636D-43F7-93B5-CDAC66E81853}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAB78576-A8B4-4DCD-8210-BB9BA475FE4E}
+	EndGlobalSection
+EndGlobal
