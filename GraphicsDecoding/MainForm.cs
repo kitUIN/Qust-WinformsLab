@@ -22,7 +22,6 @@ namespace GraphicsDecoding
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.textBoxN.KeyDown += TextBoxN_KeyDown;
             this.textBoxM.KeyDown += TextBoxM_KeyDown;
         }
         /// <summary>
@@ -30,7 +29,7 @@ namespace GraphicsDecoding
         /// </summary>
         private void StartButton_Click(Object sender, EventArgs e)
         { 
-            if (Check("M", textBoxM.Text)&& Check("N", textBoxN.Text))
+            if (Check("M", textBoxM.Text) && Check("N", textBoxN.Text))
             {
                 testForm?.Close(); // 如果存在,则销毁前一个
                 this.Hide(); // 隐藏主窗体
@@ -50,16 +49,6 @@ namespace GraphicsDecoding
             historyForm?.Close(); // 如果存在,则销毁前一个
             historyForm = new HistoryForm();
             historyForm.Show(); // 显示历史记录窗体
-        }
-        /// <summary>
-        /// 在N输入时回车
-        /// </summary> 
-        private void TextBoxN_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                InitButton_Click(sender, e);
-            }
         }
         /// <summary>
         /// 在M输入时回车
@@ -93,24 +82,7 @@ namespace GraphicsDecoding
             }
             return false;
         }
-        /// <summary>
-        /// 初始化按钮
-        /// </summary>
-        private void InitButton_Click(object sender, EventArgs e)
-        {
-            int n;
-            if (Check("N", textBoxN.Text))
-            {
-                n = int.Parse(textBoxN.Text);
-            }
-            else
-            {
-                textBoxN.Text = "";
-                return;
-            }
-            
-            
-        }
+        
 
     }
 }
