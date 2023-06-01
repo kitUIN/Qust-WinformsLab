@@ -36,6 +36,7 @@ namespace GraphicsDecoding
             this.timeUsed = new System.Windows.Forms.Label();
             this.finishButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
+            this.imgPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // timeUsedTimer
@@ -74,11 +75,21 @@ namespace GraphicsDecoding
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // imgPanel
+            // 
+            this.imgPanel.AutoScroll = true;
+            this.imgPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgPanel.Location = new System.Drawing.Point(13, 260);
+            this.imgPanel.Name = "imgPanel";
+            this.imgPanel.Size = new System.Drawing.Size(767, 426);
+            this.imgPanel.TabIndex = 3;
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 679);
+            this.ClientSize = new System.Drawing.Size(821, 721);
+            this.Controls.Add(this.imgPanel);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.finishButton);
             this.Controls.Add(this.timeUsed);
@@ -96,5 +107,6 @@ namespace GraphicsDecoding
         private Label timeUsed;
         private Button finishButton;
         private Button clearButton;
+        private Panel imgPanel;
     }
 }

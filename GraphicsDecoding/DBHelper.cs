@@ -118,7 +118,7 @@ CorrectRate real NULL
             return entries;
         }
         /// <summary>
-        /// 查询难度=n的记录
+        /// 查询M=m的记录
         /// </summary>
         public static List<History> QueryTop(int m)
         {

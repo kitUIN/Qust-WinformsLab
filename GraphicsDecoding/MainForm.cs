@@ -15,7 +15,7 @@ namespace GraphicsDecoding
     {
         private TestForm testForm;
         private HistoryForm historyForm;
-        private List<int> picArray = new List<int>();
+        
         public MainForm()
         {
             InitializeComponent();
@@ -30,25 +30,11 @@ namespace GraphicsDecoding
         /// </summary>
         private void StartButton_Click(Object sender, EventArgs e)
         { 
-            if(picArray.Count == 0)
-            {
-                if (Check("N", textBoxN.Text))
-                {
-                    InitButton_Click(sender, e);
-                    MessageBox.Show("已自动初始化,请记忆\n记忆完毕后请再开始测试", "提示");
-                    return;
-                }
-                else
-                {
-                    textBoxN.Text = "";
-                    return;
-                }
-            }
-            if (Check("M", textBoxM.Text))
+            if (Check("M", textBoxM.Text)&& Check("N", textBoxN.Text))
             {
                 testForm?.Close(); // 如果存在,则销毁前一个
                 this.Hide(); // 隐藏主窗体
-                testForm = new TestForm(picArray,int.Parse(textBoxN.Text), int.Parse(textBoxM.Text));
+                testForm = new TestForm(int.Parse(textBoxN.Text), int.Parse(textBoxM.Text));
                 testForm.FormClosed += (object s, FormClosedEventArgs args) =>
                 {
                     this.Show();
@@ -122,44 +108,8 @@ namespace GraphicsDecoding
                 textBoxN.Text = "";
                 return;
             }
-            imgPanel.Controls.Clear();
-
-            picArray.Clear();
-            Random random = new Random();
-            for (int i = 0; i < 20; ++i)  // Knuth 算法
-            {
-                picArray.Add(i + 1);
-                int idx = random.Next(0, i);
-                int temp = picArray[i];
-                picArray[i] = picArray[idx];
-                picArray[idx] = temp;
-            }
-            ResourceManager rm = new ResourceManager(typeof(GraphicsDecoding.Properties.Resources));
-            int j = 0;
-            for (int i = 0; i < n; i++)
-            {
-                if (i != 0 && i % 10 == 0) j++;
-                imgPanel.Controls.Add(new PictureBox()
-                {
-                    Image = (Image)rm.GetObject($"_{picArray[i]}"),
-                    Width = 50,
-                    Height = 50,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    SizeMode = PictureBoxSizeMode.Zoom,
-                    Location = new Point((i % 10) * 50, j * 80),
-                });
-                imgPanel.Controls.Add(new Label()
-                {
-                    Width = 50,
-                    Height = 30,
-                    Text = $"{i + 1}",// (i+1).ToString()
-                    BackColor = Color.Gold,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    Font = new Font("宋体", 14),
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Location = new Point((i % 10) * 50 , j * 80 + 50),
-                });
-            }
+            
+            
         }
 
     }
