@@ -125,7 +125,5 @@ namespace SchulteGrid
             TimeSpan s1 = DateTime.Now - startTime;
             timeUsed.Text = $"用时：{s1.TotalSeconds.ToString("0.00")} 秒";
         }
-        
-
     }
 }

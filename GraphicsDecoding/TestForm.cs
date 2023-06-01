@@ -14,10 +14,6 @@ namespace GraphicsDecoding
         /// </summary>
         private DateTime startTime;
         /// <summary>
-        /// 返回函数
-        /// </summary>
-        private Action returnAction;
-        /// <summary>
         /// 图片映射
         /// </summary>
         private readonly List<int> pics;
@@ -29,10 +25,9 @@ namespace GraphicsDecoding
         /// 初始化的n
         /// </summary>
         private readonly int n;
-        public TestForm(List<int> picArray,int n, int m, Action action)
+        public TestForm(List<int> picArray,int n, int m)
         {
             this.pics = picArray;
-            this.returnAction = action;
             this.m = m;
             this.n = n;
             InitializeComponent();
@@ -45,8 +40,7 @@ namespace GraphicsDecoding
         private void TestForm_Load(object sender, EventArgs e)
         {
             this.AutoScroll = true;
-            Assembly asm = Assembly.GetExecutingAssembly();
-            ResourceManager rm = new ResourceManager("GraphicsDecoding.Properties.Resources", asm);
+            ResourceManager rm = new ResourceManager(typeof(GraphicsDecoding.Properties.Resources));
             Random rnd = new Random();
             for (int i = 0; i < m; i++)
             {
@@ -112,6 +106,7 @@ namespace GraphicsDecoding
                     right++;
                 }
             }
+            pics.Clear();
             TimeSpan s1 = DateTime.Now - startTime;
             double res = Math.Round(right / total * 100, 2);
             MessageBox.Show($"所使用时间: {s1.TotalSeconds.ToString("0.00")} 秒,正确率: {res} %", "完成");

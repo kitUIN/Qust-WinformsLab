@@ -22,6 +22,7 @@ namespace GraphicsDecoding
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.Shown += (object s,EventArgs args)=> imgPanel.Controls.Clear();
             this.textBoxN.KeyDown += TextBoxN_KeyDown;
             this.textBoxM.KeyDown += TextBoxM_KeyDown;
         }
@@ -48,14 +49,13 @@ namespace GraphicsDecoding
             {
                 testForm?.Close(); // 如果存在,则销毁前一个
                 this.Hide(); // 隐藏主窗体
-                testForm = new TestForm(picArray,int.Parse(textBoxN.Text), int.Parse(textBoxM.Text), () => this.Show());
+                testForm = new TestForm(picArray,int.Parse(textBoxN.Text), int.Parse(textBoxM.Text));
                 testForm.FormClosed += (object s, FormClosedEventArgs args) =>
                 {
                     this.Show();
                 }; // 专注力测试窗体关闭事件
                 testForm.Show(); // 显示专注力测试窗体
             }
-            
         }
         /// <summary>
         /// 点击历史记录按钮
@@ -75,7 +75,8 @@ namespace GraphicsDecoding
             {
                 InitButton_Click(sender, e);
             }
-        }/// <summary>
+        }
+        /// <summary>
         /// 在M输入时回车
         /// </summary> 
         private void TextBoxM_KeyDown(object sender, KeyEventArgs e)
@@ -123,6 +124,7 @@ namespace GraphicsDecoding
                 return;
             }
             imgPanel.Controls.Clear();
+
             picArray.Clear();
             Random random = new Random();
             for (int i = 0; i < 20; ++i)  // Knuth 算法
@@ -133,8 +135,7 @@ namespace GraphicsDecoding
                 picArray[i] = picArray[idx];
                 picArray[idx] = temp;
             }
-            Assembly asm = Assembly.GetExecutingAssembly();
-            ResourceManager rm = new ResourceManager("GraphicsDecoding.Properties.Resources", asm);
+            ResourceManager rm = new ResourceManager(typeof(GraphicsDecoding.Properties.Resources));
             int j = 0;
             for (int i = 0; i < n; i++)
             {
@@ -152,7 +153,7 @@ namespace GraphicsDecoding
                 {
                     Width = 50,
                     Height = 30,
-                    Text = $"{i + 1}",
+                    Text = $"{i + 1}",// (i+1).ToString()
                     BackColor = Color.Gold,
                     BorderStyle = BorderStyle.FixedSingle,
                     Font = new Font("宋体", 14),
