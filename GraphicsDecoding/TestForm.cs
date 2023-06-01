@@ -75,6 +75,8 @@ namespace GraphicsDecoding
                     Location = new Point((i % m) * 50 + 10, j * 80 + 50 + 35),
                 });
             }
+            imgPanel.Location = new Point(5, j * 80 + 50 + 30 + 35 + 15);
+            
             for (int i = 0; i < m; i++)
             {
                 for (int k = 0; k < m; k++)
@@ -98,7 +100,7 @@ namespace GraphicsDecoding
                     });
                 }
             }
-            imgPanel.Width= m * 50 + 30;
+            imgPanel.Size = new Size(m * 50 + 30, this.Width - (j * 80 + 50 + 30 + 35 + 15) - 60);
             this.Width = m * 50 + 65;
             // 开始记录时间
             startTime = DateTime.Now;
