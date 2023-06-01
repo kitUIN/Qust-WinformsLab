@@ -115,26 +115,13 @@ namespace GraphicsDecoding
             timeUsed.Text = $"用时：{s1.TotalSeconds.ToString("0.00")} 秒";
         }
         /// <summary>
-        /// 清空所有的输入框
-        /// </summary>
-        private void clearButton_Click(object sender, EventArgs e)
-        {
-            foreach (object item in this.Controls)
-            {
-                if (item is TextBox box)
-                {
-                    box.Text = "";
-                }
-            }
-        }
-        /// <summary>
         /// 完成按钮
         /// </summary>
         private void finishButton_Click(object sender, EventArgs e)
         {
             double total = m * m;
             double right = 0;
-            foreach (object item in this.Controls)
+            foreach (object item in imgPanel.Controls)
             {
                 if (item is TextBox box && box.Tag.ToString() == box.Text.Trim()) 
                 {

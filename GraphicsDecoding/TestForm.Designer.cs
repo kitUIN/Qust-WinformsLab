@@ -35,7 +35,6 @@ namespace GraphicsDecoding
             this.timeUsedTimer = new System.Windows.Forms.Timer(this.components);
             this.timeUsed = new System.Windows.Forms.Label();
             this.finishButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
             this.imgPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -65,16 +64,6 @@ namespace GraphicsDecoding
             this.finishButton.UseVisualStyleBackColor = true;
             this.finishButton.Click += new System.EventHandler(this.finishButton_Click);
             // 
-            // clearButton
-            // 
-            this.clearButton.Location = new System.Drawing.Point(238, 3);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(92, 34);
-            this.clearButton.TabIndex = 2;
-            this.clearButton.Text = "清除全部";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
-            // 
             // imgPanel
             // 
             this.imgPanel.AutoScroll = true;
@@ -90,7 +79,6 @@ namespace GraphicsDecoding
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 721);
             this.Controls.Add(this.imgPanel);
-            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.finishButton);
             this.Controls.Add(this.timeUsed);
             this.Name = "TestForm";
@@ -106,7 +94,6 @@ namespace GraphicsDecoding
         private Timer timeUsedTimer;
         private Label timeUsed;
         private Button finishButton;
-        private Button clearButton;
         private Panel imgPanel;
     }
 }
