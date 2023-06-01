@@ -22,7 +22,6 @@ namespace GraphicsDecoding
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.Shown += (object s,EventArgs args)=> imgPanel.Controls.Clear();
             this.textBoxN.KeyDown += TextBoxN_KeyDown;
             this.textBoxM.KeyDown += TextBoxM_KeyDown;
         }

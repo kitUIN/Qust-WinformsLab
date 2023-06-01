@@ -17,6 +17,7 @@ namespace SchulteGrid
         /// </summary>
         private void HistoryForm_Load(object sender, EventArgs e)
         {
+            this.queryBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QueryBox_KeyDown);
             List<History> histories = DBHelper.Query();
             foreach (History item in histories)
             {

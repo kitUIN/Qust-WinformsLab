@@ -86,7 +86,6 @@ namespace SchulteGrid
             this.queryBox.Name = "queryBox";
             this.queryBox.Size = new System.Drawing.Size(273, 25);
             this.queryBox.TabIndex = 2;
-            this.queryBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QueryBox_KeyDown);
             // 
             // label2
             // 

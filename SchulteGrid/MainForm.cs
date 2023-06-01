@@ -12,6 +12,10 @@ namespace SchulteGrid
         {
             InitializeComponent();
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.difficultyBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DifficultyBox_KeyDown);
+        }
         /// <summary>
         /// 点击开始测试按钮
         /// </summary>
@@ -58,5 +62,6 @@ namespace SchulteGrid
                 StartButton_Click(sender, e);
             }
         }
+
     }
 }

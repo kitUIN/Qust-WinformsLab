@@ -52,7 +52,6 @@ namespace SchulteGrid
             this.difficultyBox.Name = "difficultyBox";
             this.difficultyBox.Size = new System.Drawing.Size(172, 25);
             this.difficultyBox.TabIndex = 1;
-            this.difficultyBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DifficultyBox_KeyDown);
             // 
             // startButton
             // 
@@ -99,6 +98,7 @@ namespace SchulteGrid
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "舒尔特方格";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
